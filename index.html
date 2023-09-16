@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game</title>
+    <style>
+      #FlexContainer {
+        display: flex;
+        justify-content: center;
+        margin-top: 10px;
+      }
+      #header {
+        text-align: center;
+        font-size: 50px;
+        color: aliceblue;
+        font-family: fantasy;
+      }
+      body {
+        background-image: url("shutterstock_359492192.webp");
+        background-attachment: scroll;
+        background-size: cover;
+      }
+      button {
+        background-color: rgb(56, 158, 221);
+        color: rgb(43, 40, 40);
+        border-radius: 13px;
+        width: 90px;
+        height: 30px;
+        font-size: larger;
+        margin-left: 50px;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+      }
+      #container {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 10px;
+        width: 600px;
+        height: 600px;
+      }
+      .card {
+        width: 100px;
+        margin: 50px 10px 10px 10px;
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 100px;
+        transition: transform 1s;
+        transform-style: preserve-3d;
+        z-index: 99;
+      }
+      .front-face,
+      .back-face {
+        position: absolute;
+        cursor: pointer;
+        font-size: 50px;
+        backface-visibility: hidden;
+      }
+      .back-face {
+        transform: rotateY(180deg);
+        background-color: transparent;
+        font-size: 80px;
+      }
+      .front-face {
+        transform: rotateY(0deg);
+        font-size: 60px;
+        font-size: 120px;
+      }
+      .button {
+        background-color: rgba(71, 157, 237, 0.6);
+        border: none;
+        border-radius: 8px;
+        color: rgb(232, 232, 232);
+        text-align: center;
+        font-size: 16px;
+        transition: 0.3s;
+        position: relative;
+        top: 50px;
+        left: 30px;
+      }
+      .button:hover {
+        background-color: rgb(71, 157, 237);
+      }
+    </style>
+  </head>
+  <body>
+    <button class="button" onclick="startGame()">Reset</button>
+    <div id="FlexContainer"><div id="container"></div></div>
+    <script src="./logic.js"></script>
+  </body>
+</html>
